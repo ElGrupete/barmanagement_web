@@ -1,4 +1,4 @@
-# BarManagementWeb
+# Bar Management is an Angular project that is focus on food shops to help them manage their products, orders and customers in a robust application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
