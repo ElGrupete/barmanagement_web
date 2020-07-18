@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon *ngIf="closed">menu</mat-icon>
+        <mat-icon *ngIf="opened">close</mat-icon>
+    </button>
+    <span class="flex-spacing"></span>
+    <!-- Icons in toolbar -->
+    <div class="flex-container align-center plr-1">
+        <span>Camarero</span>
+        <button mat-icon-button aria-label="Example icon-button with heart icon">
+            <mat-icon>help</mat-icon>
+        </button>
+    </div>
+    <div class="flex-container align-center plr-1">
+        <span>Cuenta</span>
+        <button mat-icon-button aria-label="Example icon-button with heart icon">
+            <mat-icon>help</mat-icon>
+        </button>
+    </div>
+    <div class="flex-container align-center plr-1">
+        <span>Otro</span>
+        <button mat-icon-button aria-label="Example icon-button with heart icon">
+            <mat-icon>help</mat-icon>
+        </button>
+    </div>
+    <!-- <app-header></app-header> -->
+</mat-toolbar>

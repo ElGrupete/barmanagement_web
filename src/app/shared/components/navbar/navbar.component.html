@@ -1,0 +1,23 @@
+<div class="p-1">
+    <mat-list>
+        <mat-list-item>
+            Bar ... 
+        </mat-list-item>
+    </mat-list>
+    <mat-divider></mat-divider>
+    <div class="m-top-1">
+        <!-- <mat-accordion>
+            <mat-expansion-panel  class="m-1">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Menu items
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Options</p>
+            </mat-expansion-panel>
+        </mat-accordion> -->
+        <mat-nav-list>
+            <a mat-list-item [href]="item.url" *ngFor="let item of items"> {{ item.name | uppercase }} </a>
+         </mat-nav-list>
+    </div>
+</div>
