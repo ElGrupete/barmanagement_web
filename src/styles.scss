@@ -2,3 +2,73 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 30%;
+}
+
+// mat-list-item {
+//     color: white !important;
+// }
+
+/*** COLORS ***/
+
+%dark {
+    background-color: black !important;
+    color: white !important;
+}
+
+/**** MARGINS ****/
+
+.m-top-1 {
+    margin-top: 1rem;
+}
+
+.m-1 {
+    margin: 1rem;
+}
+
+/**** PADDINGS ****/
+
+.p-1 {
+    padding: 1rem;
+}
+
+.ptb-1 {
+    padding: 1rem 0;
+}
+
+.plr-1 {
+    padding: 0 1rem;
+}
+
+/*** SPACING ***/
+
+.flex-spacing {
+    flex: 1 1 auto;
+}
+
+/*** CONTAINERS ***/
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+/*** FLEX PROPS ***/
+
+.flex-row {
+    flex-direction: column;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}

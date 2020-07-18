@@ -1,0 +1,9 @@
+<mat-sidenav-container>
+    <mat-sidenav #snav (closed)="onClosedMenu()" (opened)="onOpenedMenu()" mode="side">
+        <app-navbar></app-navbar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-toolbar [sidenav]="snav" [opened]="opened" [closed]="closed"></app-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
