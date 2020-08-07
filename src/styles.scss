@@ -11,9 +11,38 @@ mat-sidenav {
     width: 30%;
 }
 
-// mat-list-item {
-//     color: white !important;
-// }
+/*** BACKGROUND ***/
+
+/* Variable to iterate */
+$bg-counter: 1;
+
+/* This function creates a new class based on the number that is passed in */
+@mixin getBgNumber($number) {
+    /* The name of the class ends with the number */
+    .bg-#{$number} {
+        /* The image used */
+        /* Because the file name ends with a consecutive number, */
+        /* the mixin uses interpolation to set it */
+        background-image: url("./assets/img/madera-#{$number}.jpg");
+        /* The mixin uses the inheritance */
+        @extend %bg-common;
+    }
+}
+
+/* This block iterates from 1 to 9 */
+@for $bg-counter from 1 through 9 {
+    /* For every iteration, it executes the mixin & passes in the number needed */
+    @include getBgNumber($bg-counter);
+}
+
+%bg-common {
+    /*** Full height ***/
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 /*** COLORS ***/
 
