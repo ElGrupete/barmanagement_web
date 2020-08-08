@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedRoutingModule } from './shared-routing.module';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { MaterialModule } from '../global/material/material.module';
-import { FullComponent } from './full/full.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
 @NgModule({
   declarations: [
-    NavbarComponent,
-    FullComponent,
-    ToolbarComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +16,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MaterialModule
   ],
   exports: [
-    NavbarComponent
+    HomeComponent
   ]
 })
 export class SharedModule { }

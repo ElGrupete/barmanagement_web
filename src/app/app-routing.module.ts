@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { FullComponent } from './shared/full/full.component';
-
 
 const routes: Routes = [
   {
     path: '',
-    component: FullComponent
+    loadChildren: () => import('./sidebar/sidebar.module').then(m => m.SidebarModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)
   }
 ];
 
