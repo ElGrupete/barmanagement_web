@@ -3,12 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./sidebar/sidebar.module').then(m => m.SidebarModule)
+    path: 'home',
+    loadChildren: () => import('./shared/modules/home/home.module').then(m => m.HomeModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)
+    path: 'login',
+    loadChildren: () => import('./core/modules/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 

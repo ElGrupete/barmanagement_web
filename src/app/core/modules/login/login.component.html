@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="flex-container">
+    <mat-card class="card-container t-center">
+        <div class="p-1">
+            <mat-card-title>Login</mat-card-title>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <div class="p-1 card-content-container">
+                <!-- Here it is placed the form -->
+                <form [formGroup]="form" class="form-container">
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Nombre de usuario</mat-label>
+                        <input 
+                        matInput
+                        formControlName="userName"
+                        >
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Contraseña</mat-label>
+                        <input 
+                        matInput
+                        formControlName="userPassword"
+                        >
+                    </mat-form-field>
+                </form>
+                <!-- Button Container -->
+            </div>
+            <div class="button-container">
+                <button mat-raised-button color="primary">Ingresar</button>
+                <button mat-raised-button color="accent">Cancelar</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+

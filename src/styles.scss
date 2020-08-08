@@ -11,6 +11,9 @@ mat-sidenav {
     width: 30%;
 }
 
+/*** THEME ***/
+
+
 /*** BACKGROUND ***/
 
 /* Variable to iterate */
@@ -75,6 +78,12 @@ $bg-counter: 1;
     padding: 0 1rem;
 }
 
+/*** TEXT ***/
+
+.t-center {
+   text-align: center; 
+}
+
 /*** SPACING ***/
 
 .flex-spacing {
@@ -84,20 +93,63 @@ $bg-counter: 1;
 /*** CONTAINERS ***/
 
 .flex-container {
-    display: flex;
-    justify-content: center;
+    @extend %flex-row;
+    @extend %justify-center;
+    @extend %align-center;
 }
 
 /*** FLEX PROPS ***/
 
-.flex-row {
+
+%flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+%flex-column {
+    display: flex;
     flex-direction: column;
 }
 
-.flex-column {
-    flex-direction: column;
-}
-
-.align-center {
+%align-center {
     align-items: center;
+}
+
+%justify-center {
+    justify-content: center;
+}
+
+%justify-around {
+    justify-content: space-around;
+}
+
+/*** CARDS ***/
+
+.card-container {
+    @extend %flex-row;
+    @extend %align-center;
+    width: 50%;
+}
+
+.card-content-container {
+    @extend %align-center;
+    @extend %flex-column;
+    @extend %justify-center;
+}
+
+.form-container {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-container-width {
+    width: 100%;
+}
+
+/*** BUTTONS ***/
+
+.button-container {
+    @extend %flex-row;
+    @extend %justify-around;
 }

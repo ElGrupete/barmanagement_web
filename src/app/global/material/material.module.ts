@@ -9,6 +9,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
 
 const materialModules = [
   MatSidenavModule,
@@ -21,10 +23,10 @@ const materialModules = [
   // MatDatepickerModule,
   // MatDialogModule,
   MatExpansionModule,
-  // MatFormFieldModule,
+  MatFormFieldModule,
   // MatGridListModule,
   MatIconModule,
-  // MatInputModule,
+  MatInputModule,
   MatListModule,
   // MatMenuModule,
   // MatPaginatorModule,
