@@ -1,3 +1,4 @@
+import { TokenService } from './token.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http'
@@ -14,7 +15,8 @@ export class LoginService {
 
   private baseUrl = `${environment.api.url}`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private tokenService: TokenService) { }
 
   login(userName: string, password: string): Observable<User> {
     let url = `${this.baseUrl}/${API_ROUTES.login}`;
@@ -22,10 +24,12 @@ export class LoginService {
     return this.http.post<LoginResponse>(url, body)
                     .pipe(
                       map(res => {
-                          // Call the AuthService to set the token and validate the logged in status //
-                          return res.Result.user;
-                        }
-                      )
+                          // Call the TokenService to decode the token //
+                          let decodedToken = this.tokenService.getDecodedToken(res.Result.token);
+                          this.tokenService.setAuthToken(res.Result.token)
+                          // This response filters the iat & exp properties of the token //
+                          return decodedToken.user;
+                      })
                     )
   }
 }
