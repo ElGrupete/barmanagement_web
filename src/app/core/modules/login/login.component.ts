@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { AlertService } from '../../../shared/services/alert/alert.service';
 import { LoginService  } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   get password() { return this.form.get('userPassword'); }
 
   constructor(private fb: FormBuilder,
+              private router: Router,
               private loginService: LoginService,
               private alertService: AlertService) { }
 
@@ -39,9 +41,7 @@ export class LoginComponent implements OnInit {
           .subscribe(user => {
             console.log(user);
             let success = this.alertService.openOnSuccess(`Logueado exitosamente, ${user.userName}`);
-            // success
-            //   .afterDismissed()
-            //   .subscribe(res => console.log(res));
+            this.goToHome();
           });
     }
     else {
@@ -50,6 +50,10 @@ export class LoginComponent implements OnInit {
         .afterDismissed()
         .subscribe(res => console.log(res));
     }
+  }
+
+  goToHome(): void {
+    this.router.navigate(['/home']);
   }
 
 }
