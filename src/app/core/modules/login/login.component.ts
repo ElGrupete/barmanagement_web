@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AlertService } from '../../../shared/services/alert/alert.service';
 import { LoginService  } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  title: string = 'ingresar';
   form: FormGroup;
 
   get userName() { return this.form.get('userName'); }
@@ -40,8 +42,9 @@ export class LoginComponent implements OnInit {
           .login(this.userName.value, this.password.value)
           .subscribe(user => {
             console.log(user);
-            let success = this.alertService.openOnSuccess(`Logueado exitosamente, ${user.userName}`);
-            this.goToHome();
+            let success = this.alertService
+                              .openOnSuccess(`Logueado exitosamente, ${user.userName}`);
+            success.afterDismissed().pipe(delay(500)).subscribe(() => this.goToHome())
           });
     }
     else {

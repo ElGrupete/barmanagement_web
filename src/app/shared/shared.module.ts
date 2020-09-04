@@ -10,7 +10,7 @@ import { ErrorComponent } from './components/alerts/error/error.component';
 @NgModule({
   declarations: [
   SuccessComponent,
-  ErrorComponent
+  ErrorComponent,
 ],
   imports: [
     CommonModule,
@@ -23,7 +23,7 @@ import { ErrorComponent } from './components/alerts/error/error.component';
     FormsModule,
     ReactiveFormsModule,
     SuccessComponent,
-    ErrorComponent
+    ErrorComponent,
   ]
 })
 export class SharedModule { }

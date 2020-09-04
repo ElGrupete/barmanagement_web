@@ -14,40 +14,51 @@
                     <mat-form-field appearance="fill" class="form-container-width">
                         <mat-label>Nombre de usuario</mat-label>
                         <input 
-                        matInput
-                        formControlName="userName"
+                            matInput
+                            formControlName="userName"
                         >
+                        <mat-error *ngIf="userName.hasError('required')">Campo requerido</mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="fill" class="form-container-width">
                         <mat-label>Contraseña</mat-label>
                         <input 
-                        type="password"
-                        matInput
-                        formControlName="userPassword"
+                            type="password"
+                            matInput
+                            formControlName="userPassword"
+                            [errorStateMatcher]="matcher"
                         >
+                        <mat-error *ngIf="userPassword.hasError('required')">Campo requerido</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Rol</mat-label>
+                        <mat-select formControlName="role">
+                            <mat-option *ngFor="let role of roles" [value]="role._id">
+                                {{role.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="role.hasError('required')">Campo requerido</mat-error>
                     </mat-form-field>
                 </form>
-                <!-- Button Container -->
+            <!-- Button Container -->
             </div>
             <div class="button-container p-1">
-                <button mat-raised-button color="primary" (click)="onFormSubmit()">Ingresar</button>
+                <button mat-raised-button color="primary" (click)="onFormSubmit()">Registrarse</button>
             </div>
         </mat-card-content>
         <mat-divider></mat-divider>
         <mat-card-footer>
             <mat-card-subtitle>
                 <div class="p-1">
-                    <span class="mr-1">¿No tiene usuario aún?</span>
+                    <span class="mr-1">¿Ya tiene una cuenta?</span>
                     <button 
-                        routerLink="../signup"
+                        routerLink="../login"
                         mat-stroked-button 
                         color="accent" 
                         class="m-1"
-                        >Registrarse
+                        >Ingresar
                     </button>
                 </div>
             </mat-card-subtitle>
         </mat-card-footer>
     </mat-card>
 </div>
-

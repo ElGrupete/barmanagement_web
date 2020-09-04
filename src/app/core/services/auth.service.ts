@@ -7,17 +7,18 @@ import { TokenService } from './token.service';
 })
 export class AuthService {
 
-  isLoggedIn$: Subject<boolean> = new Subject<boolean>();
-
   constructor(private tokenService: TokenService) { }
 
-  isAuthenticated(): void {
+  isAuthenticated(): boolean {
     if (this.tokenService.getAuthToken() != null || 
         this.tokenService.getAuthToken() != undefined) {
-      this.isLoggedIn$.next(!this.tokenService.isTokenExpired());
+      if (this.tokenService.isTokenExpired()) {
+        return false;
+      }
+      return true;
     }
     else {
-      this.isLoggedIn$.next(false);
+      return false;
     }
   }
 

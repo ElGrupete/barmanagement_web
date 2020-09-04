@@ -29,7 +29,8 @@ export class TokenService {
   isTokenExpired(): boolean {
     if (localStorage.getItem(AUTH_KEYS.authToken) != undefined) {
       let token = localStorage.getItem(AUTH_KEYS.authToken);
-      return this.jwtHelper.isTokenExpired(token);
+      let isExpired = this.jwtHelper.isTokenExpired(token);
+      return isExpired;
     }
   }
 
