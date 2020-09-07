@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./core/modules/signup/signup.module').then(m => m.SignupModule)
   },
   {
+    path: 'management',
+    loadChildren: () => import('./core/modules/management/management.module').then(m => m.ManagementModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

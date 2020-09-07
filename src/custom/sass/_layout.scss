@@ -49,6 +49,12 @@
     @extend %justify-center;
 }
 
+.card-full-width {
+    width: 100%;
+}
+
+/*** FORMS ***/
+
 .form-container {
     min-width: 150px;
     max-width: 500px;

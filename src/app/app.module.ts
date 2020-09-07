@@ -1,3 +1,5 @@
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { SharedModule } from './shared/shared.module';
 import { CUSTOM_HTTP_INTERCEPTORS } from './core/interceptors/index.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarModule } from './shared/modules/sidebar/sidebar.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    SidebarModule
+    SidebarModule,
+    SharedModule,
+    OverlayModule
   ],
   providers: [
     CUSTOM_HTTP_INTERCEPTORS
   ],
+  entryComponents: [MatProgressSpinner],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
