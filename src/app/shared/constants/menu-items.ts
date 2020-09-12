@@ -1,5 +1,6 @@
-import { MenuItem } from "../models/menu-items.model";
+import { IMenuItem } from "../models/menu-items.model";
 
-export const MenuItems: MenuItem[] = [
-    {url: 'home', icon: 'home', name: 'Inicio'}
+export const MenuItems: IMenuItem[] = [
+    {url: 'home', icon: 'home', name: 'Inicio'},
+    {url: 'management', icon: 'dashboard', name: 'Gestión'},
 ];

@@ -1,3 +1,4 @@
+import { SharedModule } from './../../../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +10,8 @@ import { MenusComponent } from './menus.component';
   declarations: [MenusComponent],
   imports: [
     CommonModule,
-    MenusRoutingModule
+    MenusRoutingModule,
+    SharedModule
   ]
 })
 export class MenusModule { }
