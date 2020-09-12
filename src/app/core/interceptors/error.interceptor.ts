@@ -15,7 +15,6 @@ export class ErrorInterceptor implements HttpInterceptor {
     constructor(private alertService: AlertService) {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log(request);
         return next.handle(request)
                    .pipe(
                     //    retry(1),

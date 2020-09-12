@@ -47,7 +47,6 @@ export class AuthInterceptor implements HttpInterceptor {
 
     /** This append the token to the request that needs one */
     private authorizeRequest(token: string, req: HttpRequest<any>): HttpRequest<any> {
-        console.log(token);
         const headers = new HttpHeaders({ Authorization: token });
         return req.clone({ headers });
     }
