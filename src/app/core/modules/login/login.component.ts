@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
       this.loginService
           .login(this.userName.value, this.password.value)
           .subscribe(user => {
-            console.log(user);
             let success = this.alertService
                               .openOnSuccess(`Logueado exitosamente, ${user.userName}`);
             success.afterDismissed().pipe(delay(500)).subscribe(() => this.goToHome())
