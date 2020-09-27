@@ -15,7 +15,7 @@
 }
 
 %justify-left {
-    justify-content: left;
+    justify-content: left !important;
 }
 
 %justify-center {
@@ -23,7 +23,7 @@
 }
 
 %justify-around {
-    justify-content: space-around;
+    justify-content: space-around !important;
 }
 
 /*** JUSTIFYING ***/
@@ -79,4 +79,6 @@
 
 .button-container {
     @extend %flex-row;
+    @extend %align-center;
+    @extend %justify-center;
 }

@@ -1,3 +1,4 @@
+import { AlertMessages } from './../../shared/constants/alert-messages';
 import { AlertService } from './../../shared/services/alert/alert.service';
 import { catchError, retry } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
@@ -21,8 +22,13 @@ export class ErrorInterceptor implements HttpInterceptor {
                        catchError((error: HttpErrorResponse) => {
                             if (error.status === 401) {
                                 // refresh token
-                                this.alertService.openOnError(error.message)
-                            } 
+                                this.alertService.openOnError(AlertMessages.error.message)
+                            }
+                            else if (error.status === 0) {
+                                this.alertService
+                                    .openOnError(AlertMessages.error.message)
+                            }
+
                             
                             return throwError(error);
                        })

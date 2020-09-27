@@ -1,3 +1,4 @@
+import { AuthGuard } from './../../guards/auth.guard';
 import { ManagementComponent } from './management.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -6,7 +7,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: ManagementComponent
+    component: ManagementComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'tables',
