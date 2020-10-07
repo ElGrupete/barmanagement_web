@@ -3,7 +3,7 @@ import { BaseResponse } from './base-response.interface';
 
 export class RoleResponse implements BaseResponse {
     Result: {
-        role: Role;
-        roles: Role[];
+        base: Role,
+        array: Role[]
     }
 }

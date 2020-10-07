@@ -1,5 +1,8 @@
 export const API_ROUTES = {
     login: 'login',
     signup: 'user',
-    role: 'role'
+    role: 'role',
+    management: {
+        category: 'category'
+    }
 }

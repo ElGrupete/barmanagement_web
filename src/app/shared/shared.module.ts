@@ -1,7 +1,7 @@
+import { MaterialModule } from './modules/material/material.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '../global/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SuccessComponent } from './components/alerts/success/success.component';
 import { ErrorComponent } from './components/alerts/error/error.component';

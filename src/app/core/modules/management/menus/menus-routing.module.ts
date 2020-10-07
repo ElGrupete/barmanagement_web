@@ -1,3 +1,4 @@
+import { CategoryListComponent } from './category/components/category-list/category-list.component';
 import { NewDishesComponent } from './dishes/components/new-dishes/new-dishes.component';
 import { DishesListComponent } from './dishes/components/dishes-list/dishes-list.component';
 import { NewDrinkComponent } from './drinks/components/new-drink/new-drink.component';
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: '',
     component: MenusComponent
+  },
+  {
+    path: 'category',
+    component: CategoryListComponent
   },
   {
     path: 'category/new',

@@ -17,21 +17,28 @@ export class ErrorInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(request)
-                   .pipe(
-                    //    retry(1),
-                       catchError((error: HttpErrorResponse) => {
+                    .pipe(
+                        catchError((error: HttpErrorResponse) => {
                             if (error.status === 401) {
-                                // refresh token
-                                this.alertService.openOnError(AlertMessages.error.message)
+                                if (error.error.Message != null || error.error.Message != undefined) {
+                                    this.alertService.openOnError(error.error.Message)
+                                } else {
+                                    this.alertService.openOnError(AlertMessages.error.message)
+                                }
+                            } else if (error.status === 500) {
+                                console.log('error 500');
+                                if (error.error.Message != null || error.error.Message != undefined) {
+                                    this.alertService.openOnError(error.error.Message)
+                                } else {
+                                    this.alertService.openOnError(AlertMessages.error.message)
+                                }
                             }
                             else if (error.status === 0) {
                                 this.alertService
                                     .openOnError(AlertMessages.error.message)
                             }
-
-                            
                             return throwError(error);
-                       })
-                   )
+                        })
+                    )
     }
 }

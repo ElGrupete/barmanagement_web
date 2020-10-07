@@ -1,5 +1,5 @@
 import { map } from 'rxjs/operators';
-import { RoleResponse } from './../../models/responses/rol-response.model';
+import { RoleResponse } from './../../models/responses/role-response.model';
 import { API_ROUTES } from './../../../shared/constants/api-routes';
 import { BASE_URL } from './../../../shared/constants/base-url';
 import { HttpClient } from '@angular/common/http';
@@ -18,7 +18,7 @@ export class RoleService {
     return this.http.get<RoleResponse>(`${BASE_URL}/${API_ROUTES.role}/${id}`)
                     .pipe(
                       map(res => {
-                        return res.Result.role
+                        return res.Result.base
                       })
                     )
   }
@@ -27,7 +27,7 @@ export class RoleService {
     return this.http.get<RoleResponse>(`${BASE_URL}/${API_ROUTES.role}`)
                     .pipe(
                       map(res => {
-                        return res.Result.roles;
+                        return res.Result.array;
                       })
                     )
   }

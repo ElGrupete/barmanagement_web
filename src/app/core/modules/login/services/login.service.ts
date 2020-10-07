@@ -1,13 +1,13 @@
-import { LoginResponse } from './../models/responses/login-response.model';
-import { BASE_URL } from './../../shared/constants/base-url';
-import { TokenService } from './token.service';
+import { LoginResponse } from '../models/login-response.model';
+import { BASE_URL } from '../../../../shared/constants/base-url';
+import { TokenService } from '../../../services/token.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http'
-import { environment } from '../../../environments/environment'
-import { API_ROUTES } from '../../shared/constants/api-routes';
+import { environment } from '../../../../../environments/environment'
+import { API_ROUTES } from '../../../../shared/constants/api-routes';
 import { map } from 'rxjs/operators';
-import { User } from '../models/user.model';
+import { User } from '../../../models/user.model';
 
 @Injectable({
   providedIn: 'root'

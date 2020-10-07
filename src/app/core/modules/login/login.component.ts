@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { AlertService } from '../../../shared/services/alert/alert.service';
-import { LoginService  } from '../../services/login.service';
+import { LoginService  } from './services/login.service';
 import { Router } from '@angular/router';
 import { delay } from 'rxjs/operators';
 

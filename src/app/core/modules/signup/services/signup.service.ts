@@ -1,11 +1,11 @@
 import { map, catchError } from 'rxjs/operators';
-import { User } from './../models/user.model';
 import { Observable } from 'rxjs';
-import { SignupResponse } from './../models/responses/signup-response.model';
-import { API_ROUTES } from './../../shared/constants/api-routes';
-import { BASE_URL } from './../../shared/constants/base-url';
+import { SignupResponse } from '../models/signup-response.model';
+import { API_ROUTES } from '../../../../shared/constants/api-routes';
+import { BASE_URL } from '../../../../shared/constants/base-url';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from 'src/app/core/models/user.model';
 
 @Injectable({
   providedIn: 'root'

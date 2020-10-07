@@ -1,6 +1,6 @@
 import { delay } from 'rxjs/operators';
 import { AlertService } from './../../../shared/services/alert/alert.service';
-import { SignupService } from './../../services/signup.service';
+import { SignupService } from './services/signup.service';
 import { RoleService } from './../../services/role/role.service';
 import { Role } from './../../models/role.model';
 import { Component, OnInit } from '@angular/core';
