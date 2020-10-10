@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
           .subscribe(user => {
             let success = this.alertService
                               .openOnSuccess(`Logueado exitosamente, ${user.userName}`);
-            success.afterDismissed().pipe(delay(500)).subscribe(() => this.goToHome())
+            success.afterDismissed().pipe(delay(500)).subscribe(() => this.goToManagement())
           });
     }
     else {
@@ -54,8 +54,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  goToHome(): void {
-    this.router.navigate(['/home']);
+  goToManagement(): void {
+    this.router.navigate(['/management']);
   }
 
 }
