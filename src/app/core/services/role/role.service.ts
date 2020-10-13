@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Role } from '../../models/role.model';
+import { BaseResponse } from '../../models/responses/base-response.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -24,10 +25,10 @@ export class RoleService {
   }
 
   getRoles(): Observable<Role[]> {
-    return this.http.get<RoleResponse>(`${BASE_URL}/${API_ROUTES.role}`)
+    return this.http.get<BaseResponse>(`${BASE_URL}/${API_ROUTES.role}`)
                     .pipe(
                       map(res => {
-                        return res.Result.array;
+                        return res.Result.roles;
                       })
                     )
   }

@@ -56,6 +56,6 @@ export class NewCategoryComponent implements OnInit {
   }
 
   onCancel(): void {
-    this.router.navigate(['../management/menus/category']);
+    this.router.navigate(['../management/menus/']);
   }
 }

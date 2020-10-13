@@ -15,7 +15,7 @@ const routes: Routes = [
     component: MenusComponent
   },
   {
-    path: 'category',
+    path: 'category/list',
     component: CategoryListComponent
   },
   {

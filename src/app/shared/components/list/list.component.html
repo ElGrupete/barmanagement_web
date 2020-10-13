@@ -1,0 +1,27 @@
+<div class="flex-container">
+    <mat-card class="card-container t-center">
+        <div class="button-container left p-1">
+            <button mat-stroked-button color="primary" (click)="onBack()">Volver</button>
+        </div>
+        <div class="p-1">
+            <mat-card-title>{{ title |uppercase}}</mat-card-title>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-card-content class="p-1">
+            <mat-list *ngIf="options.length != 0">
+                <mat-list-item *ngFor="let option of options">
+                    <mat-icon 
+                        mat-list-icon 
+                        [matTooltip]="option.description"
+                        [matTooltipPosition]="'left'"
+                        >info
+                    </mat-icon>
+                    <div mat-line>{{option.name}}</div>
+                </mat-list-item>
+            </mat-list>
+            <mat-card-subtitle *ngIf="options.length == 0">
+                No se encontraron resultados
+            </mat-card-subtitle>
+         </mat-card-content>
+    </mat-card>
+</div>

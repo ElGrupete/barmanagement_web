@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 const materialModules = [
@@ -46,7 +47,7 @@ const materialModules = [
   // MatTableModule,
   // MatTabsModule,
   MatToolbarModule,
-  // MatTooltipModule,
+  MatTooltipModule,
   // MatStepperModule,
   // MatNativeDateModule,
   // MatRippleModule,

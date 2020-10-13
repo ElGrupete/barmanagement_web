@@ -7,6 +7,7 @@ import { SuccessComponent } from './components/alerts/success/success.component'
 import { ErrorComponent } from './components/alerts/error/error.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ListComponent } from './components/list/list.component';
 
 
 
@@ -16,6 +17,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   ErrorComponent,
   LoadingComponent,
   DashboardComponent,
+  ListComponent,
 ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SuccessComponent,
     ErrorComponent,
     LoadingComponent,
-    DashboardComponent
+    DashboardComponent,
+    ListComponent,
   ]
 })
 export class SharedModule { }
