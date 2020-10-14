@@ -11,11 +11,9 @@ export class MenusComponent implements OnInit {
   title: string = 'gestionar menus';
   options: IOptions[] = [
     {name: 'ver lista categorías', url: 'category/list'}, 
-    {name: 'ver lista platos', url: 'dishes/list'}, 
-    {name: 'ver lista bebidas', url: 'drinks/list'},
+    {name: 'ver lista menús', url: 'menu/list'}, 
     {name: 'ingresar nueva categoría', url: 'category/new'},
-    {name: 'ingresar nuevo plato', url: 'dishes/new'},
-    {name: 'ingresar nueva bebida', url: 'drinks/new'},
+    {name: 'ingresar nuevo menú', url: 'menu/new'},
   ]
 
   constructor() { }

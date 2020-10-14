@@ -1,5 +1,5 @@
 import { Category } from './../../category/models/category.model';
-export class Dishes {
+export class Menu {
     name: string;
     description: string;
     categoryId: Category;

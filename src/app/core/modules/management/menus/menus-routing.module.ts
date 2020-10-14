@@ -1,8 +1,7 @@
+import { MenuListComponent } from './menu/components/menu-list/menu-list.component';
+import { NewMenuComponent } from './menu/components/new-menu/new-menu.component';
+import { MenuDetailComponent } from './menu/components/menu-detail/menu-detail.component';
 import { CategoryListComponent } from './category/components/category-list/category-list.component';
-import { NewDishesComponent } from './dishes/components/new-dishes/new-dishes.component';
-import { DishesListComponent } from './dishes/components/dishes-list/dishes-list.component';
-import { NewDrinkComponent } from './drinks/components/new-drink/new-drink.component';
-import { DrinkListComponent } from './drinks/components/drink-list/drink-list.component';
 import { NewCategoryComponent } from './category/components/new-category/new-category.component';
 import { MenusComponent } from './menus.component';
 import { NgModule } from '@angular/core';
@@ -23,21 +22,17 @@ const routes: Routes = [
     component: NewCategoryComponent
   },
   {
-    path: 'drinks/list',
-    component: DrinkListComponent
+    path: 'menu/list',
+    component: MenuListComponent
   },
   {
-    path: 'drinks/new',
-    component: NewDrinkComponent
+    path: 'menu/new',
+    component: NewMenuComponent
   },
   {
-    path: 'dishes/list',
-    component: DishesListComponent
+    path: 'menu/detail',
+    component: MenuDetailComponent
   },
-  {
-    path: 'dishes/new',
-    component: NewDishesComponent
-  }
 ];
 
 @NgModule({

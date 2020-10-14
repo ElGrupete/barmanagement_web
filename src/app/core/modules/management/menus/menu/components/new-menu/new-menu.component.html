@@ -1,0 +1,46 @@
+<div class="flex-container">
+    <mat-card class="card-container t-center">
+        <div class="p-1">
+            <mat-card-title>{{ title |uppercase}}</mat-card-title>
+            <!-- <div class="p-1">
+                <mat-card-subtitle>Por favor, ingresa tus datos</mat-card-subtitle>
+            </div> -->
+        </div>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <div class="p-1 card-content-container">
+                <!-- Here it is placed the form -->
+                <form [formGroup]="form" class="form-container">
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Nombre del menú</mat-label>
+                        <input 
+                        matInput
+                        formControlName="name"
+                        >
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Descripción del menú</mat-label>
+                        <input 
+                        matInput
+                        formControlName="description"
+                        >
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Categoría</mat-label>
+                        <mat-select formControlName="category">
+                            <mat-option *ngFor="let category of categories" [value]="category._id">
+                                {{category.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="category.hasError('required')">Campo requerido</mat-error>
+                    </mat-form-field>
+                </form>
+                <!-- Button Container -->
+            </div>
+            <div class="button-container around center p-1">
+                <button mat-raised-button color="primary" (click)="onFormSubmit()">Guardar</button>
+                <button mat-stroked-button color="warn" (click)="onCancel()">Cancelar</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

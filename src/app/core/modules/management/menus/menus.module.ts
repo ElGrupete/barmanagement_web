@@ -7,10 +7,10 @@ import { MenusComponent } from './menus.component';
 import { NewCategoryComponent } from './category/components/new-category/new-category.component';
 import { CategoryListComponent } from './category/components/category-list/category-list.component';
 import { CategoryDetailComponent } from './category/components/category-detail/category-detail.component';
-import { NewDrinkComponent } from './drinks/components/new-drink/new-drink.component';
-import { DrinkListComponent } from './drinks/components/drink-list/drink-list.component';
-import { DishesListComponent } from './dishes/components/dishes-list/dishes-list.component';
-import { NewDishesComponent } from './dishes/components/new-dishes/new-dishes.component';
+import { NewMenuComponent } from './menu/components/new-menu/new-menu.component';
+import { MenuDetailComponent } from './menu/components/menu-detail/menu-detail.component';
+import { MenuListComponent } from './menu/components/menu-list/menu-list.component';
+
 
 
 @NgModule({
@@ -19,10 +19,9 @@ import { NewDishesComponent } from './dishes/components/new-dishes/new-dishes.co
     NewCategoryComponent,
     CategoryListComponent,
     CategoryDetailComponent,
-    NewDrinkComponent,
-    DrinkListComponent,
-    DishesListComponent,
-    NewDishesComponent, 
+    NewMenuComponent,
+    MenuDetailComponent,
+    MenuListComponent
   ],
   imports: [
     CommonModule,
