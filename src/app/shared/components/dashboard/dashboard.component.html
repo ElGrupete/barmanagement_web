@@ -1,13 +1,13 @@
 <div class="flex-container">
     <mat-card class="card-container t-center" [ngClass]="{'p-1': button, 'p-2': !button }">
-        <div *ngIf="button" class="button-container left p-1">
+        <div *ngIf="button" class="flex-container left p-1">
             <button mat-stroked-button color="primary" (click)="onClick()">Volver</button>
         </div>
         <mat-card-title class="p-1">{{title |uppercase}}</mat-card-title>
         <mat-divider></mat-divider>
-        <mat-card-content class="card-height" style="overflow: auto;">
+        <mat-card-content class="card-full-height-5">
             <div *ngFor="let opt of options" class="p-2 card-content-container">
-                <a [routerLink]="opt.url" class="card-full-width">
+                <a [routerLink]="opt.url" class="full-width">
                     <mat-card>
                         <h3 class="ptb-1 plr-2">{{opt.name |uppercase}}</h3>
                     </mat-card>

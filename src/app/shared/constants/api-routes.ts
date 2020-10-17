@@ -4,6 +4,7 @@ export const API_ROUTES = {
     role: 'role',
     management: {
         category: 'category',
+        product: 'product',
         menu: 'menu'
     }
 }

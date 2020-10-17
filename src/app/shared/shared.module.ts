@@ -8,6 +8,7 @@ import { ErrorComponent } from './components/alerts/error/error.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ListComponent } from './components/list/list.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 
@@ -18,6 +19,7 @@ import { ListComponent } from './components/list/list.component';
   LoadingComponent,
   DashboardComponent,
   ListComponent,
+  DialogComponent,
 ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { ListComponent } from './components/list/list.component';
     LoadingComponent,
     DashboardComponent,
     ListComponent,
+    DialogComponent,
   ]
 })
 export class SharedModule { }

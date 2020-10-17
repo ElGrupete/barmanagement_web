@@ -59,14 +59,48 @@
     @extend %justify-center;
 }
 
-.card-full-width {
-    width: 100%;
-}
 
 /*** HEIGHT & WIDTH ***/
 
-.card-height {
+.full-width {
+    width: 100%;
+}
+
+.w-500 {
+    width: 500px;
+}
+
+.w-400 {
+    width: 400;
+}
+
+.card-full-height-1 {
+    max-height: 100px;
+    overflow: auto;
+}
+.card-full-height-2 {
+    max-height: 200px;
+    overflow: auto;
+}
+.card-full-height-3 {
+    max-height: 300px;
+    overflow: auto;
+}
+.card-full-height-4 {
+    max-height: 400px;
+    overflow: auto;
+}
+.card-full-height-5 {
     max-height: 500px;
+    overflow: auto;
+}
+
+/*** LIST ***/
+
+.list-container-width {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
 }
 
 /*** FORMS ***/
@@ -81,10 +115,10 @@
     width: 100%;
 }
 
-/*** BUTTONS ***/
+/*** POSITION ***/
 
-.button-container {
-    @extend %flex-row;
-    @extend %align-center;
-    @extend %justify-center;
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }

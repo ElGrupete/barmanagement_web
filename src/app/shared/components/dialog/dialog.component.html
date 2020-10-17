@@ -1,0 +1,16 @@
+<div class="p-1 flex-container"> 
+    <span class="m-1">
+        <div mat-subheader>{{ data.title }}</div>
+        <ul class="custom">
+          <li *ngFor="let item of data.items; let i = index">
+            <mat-checkbox [value]="item.name" (change)="onSelectionChange($event)">
+              {{item.name}}
+            </mat-checkbox>
+          </li>
+        </ul>
+    </span>
+</div>
+<div class="flex-container around full-width p-1">
+    <button mat-raised-button color="primary" class="m-1" (click)="onAccept()">Guardar</button>
+    <button mat-stroked-button color="warn" (click)="onCancel()">Cancelar</button>
+</div>

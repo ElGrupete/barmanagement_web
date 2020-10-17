@@ -2,15 +2,23 @@
     <mat-card class="card-container t-center">
         <div class="p-1">
             <mat-card-title>{{ title |uppercase}}</mat-card-title>
-            <!-- <div class="p-1">
-                <mat-card-subtitle>Por favor, ingresa tus datos</mat-card-subtitle>
-            </div> -->
         </div>
         <mat-divider></mat-divider>
         <mat-card-content>
+            <mat-card-subtitle style="padding-top: 1rem;">Datos principales</mat-card-subtitle>
+            <mat-divider></mat-divider>
             <div class="p-1 card-content-container">
                 <!-- Here it is placed the form -->
                 <form [formGroup]="form" class="form-container">
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Categoría</mat-label>
+                        <mat-select formControlName="category">
+                            <mat-option *ngFor="let category of categories" [value]="category._id">
+                                {{category.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="category.hasError('required')">Campo requerido</mat-error>
+                    </mat-form-field>
                     <mat-form-field appearance="fill" class="form-container-width">
                         <mat-label>Nombre del menú</mat-label>
                         <input 
@@ -26,19 +34,34 @@
                         >
                     </mat-form-field>
                     <mat-form-field appearance="fill" class="form-container-width">
-                        <mat-label>Categoría</mat-label>
-                        <mat-select formControlName="category">
-                            <mat-option *ngFor="let category of categories" [value]="category._id">
-                                {{category.name}}
-                            </mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="category.hasError('required')">Campo requerido</mat-error>
+                        <mat-label>Precio ($)</mat-label>
+                        <input 
+                        matInput
+                        formControlName="price"
+                        >
+                        <mat-error *ngIf="price.hasError('pattern')">Números solamente</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Foto del menú</mat-label>
+                        <ngx-mat-file-input #fileInput [accept]="aft"></ngx-mat-file-input>
+                        <button mat-icon-button matSuffix *ngIf="!fileInput.empty" (click)="fileInput.clear($event)">
+                            <mat-icon color="warn">clear</mat-icon>
+                        </button>
+                        <mat-icon *ngIf="fileInput.empty" color="primary" matSuffix>folder</mat-icon>
                     </mat-form-field>
                 </form>
-                <!-- Button Container -->
             </div>
-            <div class="button-container around center p-1">
-                <button mat-raised-button color="primary" (click)="onFormSubmit()">Guardar</button>
+            <mat-divider></mat-divider>
+            <mat-card-subtitle style="padding-top: 1rem;">Ingredientes</mat-card-subtitle>
+            <mat-divider></mat-divider>
+            <mat-card-actions>
+                <button mat-mini-fab color="primary" (click)="openModal()"><mat-icon>add</mat-icon></button>
+            </mat-card-actions>
+            <mat-chip-list aria-label="Product selection">
+                <mat-chip *ngFor="let product of products"  color="primary">{{ product.name }}</mat-chip>
+            </mat-chip-list>
+            <div class="flex-container around center p-1">
+                <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onFormSubmit()">Guardar</button>
                 <button mat-stroked-button color="warn" (click)="onCancel()">Cancelar</button>
             </div>
         </mat-card-content>

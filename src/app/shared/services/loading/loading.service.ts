@@ -31,4 +31,8 @@ export class LoadingService {
   hideLoading(): void {
     this.spinnerRef.detach();
   }
+
+  overlayIsAttached(): boolean {
+    return this.spinnerRef.hasAttached();
+  }
 }
