@@ -1,0 +1,13 @@
+<div class="flex-container">
+    <mat-card *ngFor="let item of items" class="card-container t-center">
+        <mat-card-content class="card-full-height-5">
+            <img mat-card-image [src]="item.url">
+            <mat-divider></mat-divider>
+            <mat-card-title class="p-1">{{item.name |uppercase}} - {{ item.price }}</mat-card-title>
+            <mat-divider *ngIf="canSeeActions"></mat-divider>
+            <mat-card-actions *ngIf="canSeeActions">
+                <button mat-stroked-button>Editar</button>
+            </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+</div>

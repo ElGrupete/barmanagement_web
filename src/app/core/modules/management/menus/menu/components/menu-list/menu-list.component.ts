@@ -4,7 +4,7 @@ import { MenuService } from './../../services/menu.service';
 import { Component, OnInit } from '@angular/core';
 import { API_ROUTES } from 'src/app/shared/constants/api-routes';
 import { map } from 'rxjs/operators';
-import { IList } from 'src/app/shared/models/list.model';
+import { ICard } from 'src/app/shared/models/card.model';
 
 @Component({
   selector: 'app-menu-list',
@@ -14,8 +14,8 @@ import { IList } from 'src/app/shared/models/list.model';
 export class MenuListComponent implements OnInit {
 
   title: string = 'menus';
-  menus: Menu[];
-  options: IList[] = [];
+  menus: Menu[] = [];
+  items: ICard[] = [];
 
   constructor(private menuService: MenuService) { }
 
@@ -31,8 +31,14 @@ export class MenuListComponent implements OnInit {
         )
         .subscribe(menus => {
           this.menus = menus;
+          console.log(menus);
           this.menus.forEach(menu => {
-            this.options.push({ name: menu.name, description: menu.description != "" || null ? menu.description : AlertMessages.noData.productDescription });
+            this.items
+                .push({
+                  name: menu.name,
+                  price: menu.price,
+                  url: menu.image
+                });
           })
         }); 
   }
