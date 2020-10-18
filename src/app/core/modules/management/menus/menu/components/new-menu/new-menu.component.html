@@ -43,8 +43,8 @@
                     </mat-form-field>
                     <mat-form-field appearance="fill" class="form-container-width">
                         <mat-label>Foto del menú</mat-label>
-                        <ngx-mat-file-input #fileInput [accept]="aft"></ngx-mat-file-input>
-                        <button mat-icon-button matSuffix *ngIf="!fileInput.empty" (click)="fileInput.clear($event)">
+                        <ngx-mat-file-input #fileInput formControlName="image" [accept]="aft"></ngx-mat-file-input>
+                        <button mat-icon-button matSuffix *ngIf="!fileInput.empty" (click)="onImageDeleted()">
                             <mat-icon color="warn">clear</mat-icon>
                         </button>
                         <mat-icon *ngIf="fileInput.empty" color="primary" matSuffix>folder</mat-icon>
@@ -61,7 +61,7 @@
                 <mat-chip *ngFor="let product of products"  color="primary">{{ product.name }}</mat-chip>
             </mat-chip-list>
             <div class="flex-container around center p-1">
-                <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onFormSubmit()">Guardar</button>
+                <button mat-raised-button color="primary" [disabled]="!form.valid || products.length == 0" (click)="onFormSubmit()">Guardar</button>
                 <button mat-stroked-button color="warn" (click)="onCancel()">Cancelar</button>
             </div>
         </mat-card-content>

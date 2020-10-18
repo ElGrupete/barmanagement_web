@@ -6,5 +6,8 @@ export const AlertMessages = {
     error: {
         status: '¡Error!',
         message: 'Algo salió mal...'
+    },
+    noData: {
+        productDescription: 'No hay descripción'
     }
 }

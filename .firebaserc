@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "imgupload-ca335": {
+      "hosting": {
+        "bar-management-web": [
+          "imgupload-ca335"
+        ]
+      }
+    }
+  }
+}

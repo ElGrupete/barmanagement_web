@@ -5,8 +5,14 @@
 export const environment = {
   production: false,
   api: {
-    url: 'http://localhost:3000/api/v1'
-  }
+    url: 'http://localhost:3000/api/v1',
+  },
+  firebase: {
+    apiKey: "AIzaSyCvCFl5yTK7YswJHFSSbN1dBDvvXWTEYUA",
+    authDomain: "imgupload-ca335.firebaseapp.com",
+    projectId: "barmanagement-74f51",
+    storageBucket: "barmanagement-74f51.appspot.com",
+    }
 };
 
 /*
