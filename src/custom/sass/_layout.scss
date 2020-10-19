@@ -7,7 +7,15 @@
 
 %flex-column {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
+}
+
+%flex-wrap {
+    flex-wrap: wrap;
+}
+
+%flex-no-wrap {
+    flex-wrap: nowrap;
 }
 
 %align-center {
@@ -32,12 +40,21 @@
 .center { @extend %justify-center; }
 .around { @extend %justify-around; }
 
+/*** WRAPING ***/
+
+.wrap { @extend %flex-wrap; }
+.no-wrap { @extend %flex-no-wrap; }
+
 /*** CONTAINERS ***/
 
 .flex-container {
     @extend %flex-row;
     @extend %justify-center;
     @extend %align-center;
+}
+
+.column {
+    @extend %flex-column;
 }
 
 /*** SPACING ***/

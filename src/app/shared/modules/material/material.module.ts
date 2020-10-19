@@ -17,8 +17,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatChipsModule} from '@angular/material/chips';
+import { MatMenuModule } from '@angular/material/menu';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
-import { from } from 'rxjs';
 
 
 const materialModules = [
@@ -37,7 +37,7 @@ const materialModules = [
   MatIconModule,
   MatInputModule,
   MatListModule,
-  // MatMenuModule,
+  MatMenuModule,
   // MatPaginatorModule,
   // MatProgressBarModule,
   MatProgressSpinnerModule,

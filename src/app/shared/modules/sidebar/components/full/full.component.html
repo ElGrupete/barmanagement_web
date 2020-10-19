@@ -2,10 +2,10 @@
     <mat-sidenav #snav (closed)="onClosedMenu()" (opened)="onOpenedMenu()" mode="side">
         <app-navbar></app-navbar>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content class="bg-9">
         <app-toolbar [sidenav]="snav" [opened]="opened" [closed]="closed"></app-toolbar>
-        <div class="bg-9 flex-container">
+        <main class="ptb-2">
             <router-outlet></router-outlet>
-        </div>
+        </main>
     </mat-sidenav-content>
 </mat-sidenav-container>

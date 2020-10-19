@@ -128,7 +128,8 @@ export class NewMenuComponent implements OnInit {
       category: this.category.value,
       price: parseFloat(this.convertCommaToPointFloatNumber(this.price.value)),
       image: this.downloadURL,
-      product: this.getProductsId(this.products)
+      product: this.getProductsId(this.products),
+      hasSideDishes: false
     }
 
     this.menuService

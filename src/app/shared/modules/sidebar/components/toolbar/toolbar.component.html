@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="sticky">
     <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon *ngIf="closed">menu</mat-icon>
         <mat-icon *ngIf="opened">close</mat-icon>
@@ -23,5 +23,4 @@
             <mat-icon>help</mat-icon>
         </button>
     </div>
-    <!-- <app-header></app-header> -->
 </mat-toolbar>

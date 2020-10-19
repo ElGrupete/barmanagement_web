@@ -23,13 +23,10 @@ $bg-counter: 1;
 
 %bg-common {
     /*** Full height ***/
-    height: 100%;
+    height: calc(100% - 64px);
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.title-bg {
-    background-color: lightgrey;
+    background-attachment: fixed;
 }

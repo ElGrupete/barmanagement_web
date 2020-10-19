@@ -1,13 +1,30 @@
-<div class="flex-container">
-    <mat-card *ngFor="let item of items" class="card-container t-center">
-        <mat-card-content class="card-full-height-5">
-            <img mat-card-image [src]="item.url">
-            <mat-divider></mat-divider>
-            <mat-card-title class="p-1">{{item.name |uppercase}} - {{ item.price }}</mat-card-title>
-            <mat-divider *ngIf="canSeeActions"></mat-divider>
-            <mat-card-actions *ngIf="canSeeActions">
-                <button mat-stroked-button>Editar</button>
-            </mat-card-actions>
-        </mat-card-content>
+<div class="flex-container wrap around">
+    <mat-card *ngFor="let item of items" class="card-container t-center m-1" style="width: 270px;">
+            <mat-card-content>
+                <img mat-card-image [src]="item.url" style="width: auto; max-height: 250px;">
+                <div *ngIf="item.url == null" class="flex-container column" style="width: auto; height: 250px;">
+                    <p>Sin imagen</p>
+                    <mat-icon>visibility_off</mat-icon>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="pt-1 flex-container">
+                    <div mat-card-subtitle class="m-none"><b>{{item.name |uppercase}} - {{ item.price|currency }}</b></div>
+                    <div *ngIf="canSeeActions">
+                        <button mat-icon-button [matMenuTriggerFor]="actionsMenu" aria-label="Example icon-button with a menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #actionsMenu="matMenu">
+                        <button mat-menu-item (click)="onEdit(item.id)">
+                            <mat-icon>edit</mat-icon>
+                            <span>Editar</span>
+                        </button>
+                        <button mat-menu-item (click)="onView(item.id)">
+                            <mat-icon>visibility</mat-icon>
+                            <span>Ver</span>
+                        </button>
+                        </mat-menu>
+                    </div>
+                </div>  
+            </mat-card-content>
     </mat-card>
 </div>

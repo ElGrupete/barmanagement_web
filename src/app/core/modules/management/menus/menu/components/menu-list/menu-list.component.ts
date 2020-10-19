@@ -36,8 +36,9 @@ export class MenuListComponent implements OnInit {
             this.items
                 .push({
                   name: menu.name,
-                  price: menu.price,
-                  url: menu.image
+                  price: menu.price.$numberDecimal,
+                  url: menu.image,
+                  id: menu._id
                 });
           })
         }); 
