@@ -13,6 +13,9 @@ export class ManagementComponent implements OnInit {
     {name: 'gestionar mesas', url: 'tables'}, 
     {name: 'gestionar empleados', url: 'employees'}, 
     {name: 'gestionar menus', url: 'menus'},
+    {name: 'reservas', url: 'bookings'},
+    {name: 'turnos', url: 'shifts'},
+    {name: 'caja', url: 'cash-register'},
   ]
 
   constructor() { }

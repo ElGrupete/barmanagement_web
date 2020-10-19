@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'menu/detail/:id',
     component: MenuDetailComponent
   },
+  {
+    path: '**',
+    component: MenusComponent
+  }
 ];
 
 @NgModule({

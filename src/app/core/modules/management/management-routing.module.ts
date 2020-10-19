@@ -21,6 +21,18 @@ const routes: Routes = [
   {
     path: 'employees',
     loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule)
+  },
+  {
+    path: 'bookings',
+    loadChildren: () => import('./bookings/bookings.module').then(m => m.BookingsModule)
+  },
+  {
+    path: 'cash-register',
+    loadChildren: () => import('./cash-register/cash-register.module').then(m => m.CashRegisterModule)
+  },
+  {
+    path: 'shifts',
+    loadChildren: () => import('./shifts/shifts.module').then(m => m.ShiftsModule)
   }
 ];
 
