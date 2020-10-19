@@ -15,6 +15,10 @@ export abstract class BaseHttpService<T> {
         return this.http.get<BaseResponse>(`${BASE_URL}/${endpoint}`);
     }
 
+    getById(endpoint: string, id: string): Observable<BaseResponse> {
+        return this.http.get<BaseResponse>(`${BASE_URL}/${endpoint}/${id}`);
+    }
+
     create(endpoint: string, body: T): Observable<BaseResponse> {
         return this.http
                    .post<BaseResponse>(`${BASE_URL}/${endpoint}`, body);

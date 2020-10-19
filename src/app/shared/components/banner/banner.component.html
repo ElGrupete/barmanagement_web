@@ -1,0 +1,27 @@
+<div class="flex-container">
+    <mat-card class="banner--width-max t-center">
+        <div class="flex-container left p-1">
+            <button mat-stroked-button color="primary" (click)="onBack()">Volver</button>
+        </div>
+        <mat-card-content>
+            <div class="flex-container">
+                <div class="half-width plr-2 t-left">
+                    <mat-card-title>{{ item != undefined ? item.name : 'Sin datos' }}</mat-card-title>
+                    <mat-card-subtitle>Ingredientes</mat-card-subtitle>
+                    <ng-container *ngFor="let product of products">
+                        <p>{{ product != undefined ? product.name : 'Sin datos' }}</p>
+                    </ng-container>
+                </div>
+                <div class="half-width">
+                    <div *ngIf="item != undefined && item?.url == null" class="flex-container column center" style="width: auto; height: 500px; background-color: moccasin;">
+                        <p>Sin imagen</p>
+                        <mat-icon>visibility_off</mat-icon>
+                    </div>
+                    <div class="flex-container" *ngIf="item != undefined && item.url != null">
+                        <img mat-card-image [src]="item.url" style="width: 100%; max-height: auto;" class="m-1">
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

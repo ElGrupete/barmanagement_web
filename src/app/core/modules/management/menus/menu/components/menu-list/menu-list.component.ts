@@ -1,5 +1,5 @@
 import { AlertMessages } from 'src/app/shared/constants/alert-messages';
-import { Menu } from './../../models/menu.model';
+import { Menu, ResponseMenu } from './../../models/menu.model';
 import { MenuService } from './../../services/menu.service';
 import { Component, OnInit } from '@angular/core';
 import { API_ROUTES } from 'src/app/shared/constants/api-routes';
@@ -14,7 +14,7 @@ import { ICard } from 'src/app/shared/models/card.model';
 export class MenuListComponent implements OnInit {
 
   title: string = 'menus';
-  menus: Menu[] = [];
+  menus: ResponseMenu[] = [];
   items: ICard[] = [];
 
   constructor(private menuService: MenuService) { }
@@ -29,14 +29,14 @@ export class MenuListComponent implements OnInit {
         .pipe(
           map(allMenus => allMenus.Result.menus)
         )
-        .subscribe(menus => {
+        .subscribe((menus: ResponseMenu[]) => {
           this.menus = menus;
           console.log(menus);
           this.menus.forEach(menu => {
             this.items
                 .push({
                   name: menu.name,
-                  price: menu.price.$numberDecimal,
+                  price: parseFloat(menu.price.$numberDecimal),
                   url: menu.image,
                   id: menu._id
                 });

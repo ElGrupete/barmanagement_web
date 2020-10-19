@@ -10,6 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ListComponent } from './components/list/list.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { CardComponent } from './components/card/card.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 
 
@@ -22,6 +23,7 @@ import { CardComponent } from './components/card/card.component';
   ListComponent,
   DialogComponent,
   CardComponent,
+  BannerComponent,
 ],
   imports: [
     CommonModule,
@@ -41,6 +43,7 @@ import { CardComponent } from './components/card/card.component';
     ListComponent,
     DialogComponent,
     CardComponent,
+    BannerComponent,
   ]
 })
 export class SharedModule { }
