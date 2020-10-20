@@ -1,3 +1,4 @@
+import { ResponseOrder } from './models/order.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
+
+  orders: ResponseOrder[] = []
 
   constructor() { }
 
