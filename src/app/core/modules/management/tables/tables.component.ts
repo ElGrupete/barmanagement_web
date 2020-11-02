@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IOptions } from 'src/app/shared/models/options.model';
 
 @Component({
   selector: 'app-tables',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tables.component.scss']
 })
 export class TablesComponent implements OnInit {
+
+  title: string = 'gestionar sectores y mesas';
+  options: IOptions[] = [
+    {name: 'sectores del salón', url: 'sector'},
+    {name: 'mesas del salón', url: 'table'}
+  ];
 
   constructor() { }
 

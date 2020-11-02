@@ -4,11 +4,15 @@ import { CommonModule } from '@angular/common';
 
 import { TablesRoutingModule } from './tables-routing.module';
 import { TablesComponent } from './tables.component';
+import { TableComponent } from './components/table/table.component';
+import { SectorComponent } from './components/sector/sector.component';
 
 
 @NgModule({
   declarations: [
-    TablesComponent
+    TablesComponent,
+    TableComponent,
+    SectorComponent
   ],
   imports: [
     CommonModule,
