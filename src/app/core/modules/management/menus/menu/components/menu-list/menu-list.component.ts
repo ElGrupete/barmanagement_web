@@ -31,7 +31,6 @@ export class MenuListComponent implements OnInit {
         )
         .subscribe((menus: ResponseMenu[]) => {
           this.menus = menus;
-          console.log(menus);
           this.menus.forEach(menu => {
             this.items
                 .push({

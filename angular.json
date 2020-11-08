@@ -17,6 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@firebase/app",
+              "firebase/app"
+            ],
             "outputPath": "dist/bar-management-web",
             "index": "src/index.html",
             "main": "src/main.ts",

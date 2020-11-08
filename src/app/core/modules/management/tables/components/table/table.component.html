@@ -13,14 +13,18 @@
         <mat-card-title class="p-1">MESAS</mat-card-title>
         <mat-divider></mat-divider>
         <mat-card-content class="card-full-height-5">
-            <!-- <div *ngFor="let opt of options" class="p-2 card-content-container">
-                <a [routerLink]="opt.url" class="full-width">
+            <div *ngFor="let opt of tables" class="p-2 card-content-container">
+                <!-- <a [routerLink]="opt.url" class="full-width"> -->
                     <mat-card class="mat-elevation-z5">
-                        <h3 class="ptb-1 plr-2">{{opt.name |uppercase}}</h3>
+                        <h3 class="ptb-1 plr-2">{{opt.number}}</h3>
                         
                     </mat-card>
-                </a>
-            </div> -->
+                <!-- </a> -->
+            </div>
+            <mat-card class="mat-elevation-z5" *ngIf="tables.length == 0">
+                <h3 class="ptb-1 plr-2 mt-1">Sin resultados</h3>
+                
+            </mat-card>
         </mat-card-content>
     </mat-card>
 </div>

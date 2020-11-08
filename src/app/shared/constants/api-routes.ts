@@ -5,6 +5,7 @@ export const API_ROUTES = {
     management: {
         category: 'category',
         product: 'product',
-        menu: 'menu'
+        menu: 'menu',
+        table: 'table'
     }
 }

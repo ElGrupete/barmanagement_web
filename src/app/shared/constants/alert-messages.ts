@@ -8,6 +8,7 @@ export const AlertMessages = {
         message: 'Algo salió mal...'
     },
     noData: {
-        productDescription: 'No hay descripción'
+        productDescription: 'No hay descripción',
+        noResults: 'No se encontraron resultados'
     }
 }
