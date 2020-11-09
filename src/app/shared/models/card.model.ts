@@ -1,6 +1,7 @@
 export interface ICard {
     id: string;
     name: string;
-    price: number;
-    url: string;
+    price?: number; /** For products cards */
+    role?: string; /** For employees cards */
+    url?: string; /** For images */
 }

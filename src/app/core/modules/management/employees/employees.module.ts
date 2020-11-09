@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 
 import { EmployeesRoutingModule } from './employees-routing.module';
 import { EmployeesComponent } from './employees.component';
+import { EmployeesListComponent } from './components/employees-list/employees-list.component';
+import { NewEmployeeComponent } from './components/new-employee/new-employee.component';
 
 
 @NgModule({
-  declarations: [EmployeesComponent],
+  declarations: [EmployeesComponent, EmployeesListComponent, NewEmployeeComponent],
   imports: [
     CommonModule,
     EmployeesRoutingModule,

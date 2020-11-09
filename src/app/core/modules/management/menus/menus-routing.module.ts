@@ -1,3 +1,5 @@
+import { DessertComponent } from './menu/components/dessert/dessert.component';
+import { ChefSuggestionComponent } from './menu/components/chef-suggestion/chef-suggestion.component';
 import { MenuListComponent } from './menu/components/menu-list/menu-list.component';
 import { NewMenuComponent } from './menu/components/new-menu/new-menu.component';
 import { MenuDetailComponent } from './menu/components/menu-detail/menu-detail.component';
@@ -32,6 +34,14 @@ const routes: Routes = [
   {
     path: 'menu/detail/:id',
     component: MenuDetailComponent
+  },
+  {
+    path: 'menu/chef-suggestion',
+    component: ChefSuggestionComponent
+  },
+  {
+    path: 'menu/dessert',
+    component: DessertComponent
   },
   {
     path: '**',

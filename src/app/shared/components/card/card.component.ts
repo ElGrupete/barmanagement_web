@@ -11,6 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardComponent implements OnInit {
 
   canSeeActions: boolean = true;
+  @Input() title: string = '';
   @Input() items: ICard[] = [];
   @Input() redirectPath: string = '/';
 

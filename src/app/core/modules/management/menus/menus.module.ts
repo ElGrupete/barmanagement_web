@@ -10,6 +10,10 @@ import { CategoryDetailComponent } from './category/components/category-detail/c
 import { NewMenuComponent } from './menu/components/new-menu/new-menu.component';
 import { MenuDetailComponent } from './menu/components/menu-detail/menu-detail.component';
 import { MenuListComponent } from './menu/components/menu-list/menu-list.component';
+import { DessertComponent } from './menu/components/dessert/dessert.component';
+import { ChefSuggestionComponent } from './menu/components/chef-suggestion/chef-suggestion.component';
+import { StarterMealComponent } from './menu/components/starter-meal/starter-meal.component';
+import { MainCourseComponent } from './menu/components/main-course/main-course.component';
 
 
 
@@ -21,7 +25,11 @@ import { MenuListComponent } from './menu/components/menu-list/menu-list.compone
     CategoryDetailComponent,
     NewMenuComponent,
     MenuDetailComponent,
-    MenuListComponent
+    MenuListComponent,
+    DessertComponent,
+    ChefSuggestionComponent,
+    StarterMealComponent,
+    MainCourseComponent
   ],
   imports: [
     CommonModule,

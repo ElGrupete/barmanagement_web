@@ -4,7 +4,8 @@ export const API_ROUTES = {
     role: 'role',
     config: {
         table: 'table',
-        sector: 'sector'
+        sector: 'sector',
+        employees: 'user'
     },
     management: {
         category: 'category',

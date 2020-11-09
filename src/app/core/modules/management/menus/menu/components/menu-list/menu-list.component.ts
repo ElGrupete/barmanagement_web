@@ -1,7 +1,7 @@
 import { AlertMessages } from 'src/app/shared/constants/alert-messages';
 import { Menu, ResponseMenu } from './../../models/menu.model';
 import { MenuService } from './../../services/menu.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { API_ROUTES } from 'src/app/shared/constants/api-routes';
 import { map } from 'rxjs/operators';
 import { ICard } from 'src/app/shared/models/card.model';
@@ -13,9 +13,10 @@ import { ICard } from 'src/app/shared/models/card.model';
 })
 export class MenuListComponent implements OnInit {
 
-  title: string = 'menus';
   menus: ResponseMenu[] = [];
   items: ICard[] = [];
+  @Input() query: string = '';
+  @Input() title: string = 'menus';
 
   constructor(private menuService: MenuService) { }
 
@@ -25,9 +26,9 @@ export class MenuListComponent implements OnInit {
 
   getAllMenus(): void {
     this.menuService
-        .getAll(API_ROUTES.management.menu)
+        .getAll(`${API_ROUTES.management.menu}?categoryId=${this.query}`)
         .pipe(
-          map(allMenus => allMenus.Result.menus)
+          map(allMenus => allMenus.Result.filteredMenus)
         )
         .subscribe((menus: ResponseMenu[]) => {
           this.menus = menus;
