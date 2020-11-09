@@ -18,6 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatChipsModule} from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 
@@ -44,7 +45,7 @@ const materialModules = [
   // MatRadioModule,
   MatSelectModule,
   // MatSliderModule,
-  // MatSlideToggleModule,
+  MatSlideToggleModule,
   MatSnackBarModule,
   // MatSortModule,
   // MatSpinner,

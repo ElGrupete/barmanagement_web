@@ -1,1 +1,53 @@
-<p>sector works!</p>
+<div class="flex-container">
+    <mat-card class="card-container card--width-max t-center">
+        <div class="flex-container left p-1">
+            <button mat-stroked-button color="primary" (click)="onBack()">Volver</button>
+        </div>
+        <mat-card-title class="p-1">AGREGAR MESAS</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <div class="p-1 card-content-container">
+                <!-- Here it is placed the form -->
+                <form [formGroup]="form" class="form-container">
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Nombre del sector</mat-label>
+                        <input 
+                        matInput
+                        formControlName="name"
+                        >
+                        <mat-error *ngIf="name.hasError('required')">Nombre requerido</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Descripción</mat-label>
+                        <input 
+                        matInput
+                        formControlName="description"
+                        >
+                    </mat-form-field>
+                </form>
+                <!-- Button Container -->
+            </div>
+            <mat-card-actions>
+                <button mat-stroked-button color="primary" [disabled]="!form.valid" (click)="addSector()">Agregar</button>
+            </mat-card-actions>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-title class="p-2">SECTORES</mat-card-title>
+        <mat-card-content class="card-full-height-5 center" style="display: flex; flex-wrap: wrap;">
+            <div *ngFor="let sector of sectors" class="p-1">
+                <mat-card 
+                    [matTooltip]="sector.description"
+                    [matTooltipPosition]="'left'" 
+                    class="mat-elevation-z5 p-1" 
+                    *ngIf="sectors.length != 0">
+                    <h3 class="ptb-1 plr-1">{{ sector.name |uppercase}}</h3>
+                </mat-card>
+            </div>
+            <div class="p-1" *ngIf="sectors?.length == 0">
+                <mat-card class="mat-elevation-z0">
+                    <h3 class="ptb-1 plr-2 mt-1">Sin resultados</h3>
+                </mat-card>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

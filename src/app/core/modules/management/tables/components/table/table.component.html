@@ -1,30 +1,70 @@
 <div class="flex-container">
-    <mat-card class="card-container t-center">
-        <!-- <div *ngIf="button" class="flex-container left p-1">
-            <button mat-stroked-button color="primary" (click)="onClick()">Volver</button>
-        </div> -->
+    <mat-card class="card-container card--width-max t-center">
+        <div class="flex-container left p-1">
+            <button mat-stroked-button color="primary" (click)="onBack()">Volver</button>
+        </div>
         <mat-card-title class="p-1">AGREGAR MESAS</mat-card-title>
         <mat-divider></mat-divider>
         <mat-card-content>
+            <div class="p-1 card-content-container">
+                <!-- Here it is placed the form -->
+                <form [formGroup]="form" class="form-container">
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Número de mesa</mat-label>
+                        <input 
+                        matInput
+                        [readonly]="true"
+                        formControlName="number"
+                        >
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Capacidad de la mesa</mat-label>
+                        <input 
+                        matInput
+                        formControlName="capacity"
+                        >
+                        <mat-error *ngIf="capacity.hasError('required')">Campo requerido</mat-error>
+                        <mat-error *ngIf="capacity.hasError('pattern')">Sólo números</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Sector</mat-label>
+                        <mat-select formControlName="sector">
+                            <mat-option *ngFor="let sector of sectors" [value]="sector._id">
+                                {{sector.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="sector.hasError('required')">Campo requerido</mat-error>
+                    </mat-form-field>
+                    <div class="p-1">
+                        <mat-slide-toggle formControlName="available">Disponible</mat-slide-toggle>
+                    </div>
+                    <div class="p-1">
+                        <mat-slide-toggle formControlName="booked">Reservada</mat-slide-toggle>
+                    </div>
+                </form>
+                <!-- Button Container -->
+            </div>
             <mat-card-actions>
-                <button mat-mini-fab color="primary" (click)="addTable()"><mat-icon>add</mat-icon></button>
+                <button mat-mini-fab color="primary" [disabled]="!form.valid" (click)="addTable()"><mat-icon>add</mat-icon></button>
             </mat-card-actions>
         </mat-card-content>
-        <mat-card-title class="p-1">MESAS</mat-card-title>
         <mat-divider></mat-divider>
-        <mat-card-content class="card-full-height-5">
-            <div *ngFor="let opt of tables" class="p-2 card-content-container">
-                <!-- <a [routerLink]="opt.url" class="full-width"> -->
-                    <mat-card class="mat-elevation-z5">
-                        <h3 class="ptb-1 plr-2">{{opt.number}}</h3>
-                        
-                    </mat-card>
-                <!-- </a> -->
+        <mat-card-title class="p-2">MESAS</mat-card-title>
+        <mat-card-content class="card-full-height-5 center" style="display: flex; flex-wrap: wrap;">
+            <div *ngFor="let table of tables" class="p-1">
+                <mat-card 
+                    [matTooltip]="table.info"
+                    [matTooltipPosition]="'left'" 
+                    class="mat-elevation-z5 p-1" 
+                    *ngIf="tables.length != 0">
+                    <h3 class="ptb-1 plr-1">{{ table.number }}</h3>
+                </mat-card>
             </div>
-            <mat-card class="mat-elevation-z5" *ngIf="tables.length == 0">
-                <h3 class="ptb-1 plr-2 mt-1">Sin resultados</h3>
-                
-            </mat-card>
+            <div class="p-1" *ngIf="tables?.length == 0">
+                <mat-card class="mat-elevation-z0">
+                    <h3 class="ptb-1 plr-2 mt-1">Sin resultados</h3>
+                </mat-card>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>

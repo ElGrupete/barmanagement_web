@@ -6,7 +6,8 @@ const UNAUTHORIZED_ROUTES: string[] = [
     `${BASE_URL}/${API_ROUTES.management.category}`,
     `${BASE_URL}/${API_ROUTES.management.product}`,
     `${BASE_URL}/${API_ROUTES.management.menu}`,
-    `${BASE_URL}/${API_ROUTES.management.table}`,
+    `${BASE_URL}/${API_ROUTES.config.table}`,
+    `${BASE_URL}/${API_ROUTES.config.sector}`,
 ];
 
 export const getUnauthorizedRoutes = () => {
