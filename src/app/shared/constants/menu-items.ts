@@ -10,6 +10,6 @@ export const MenuItems: IMenuItem[] = [
         {url: 'management/menus/menu/', icon: 'restaurant', name: 'platos principales'},
         {url: 'management/menus/menu/dessert', icon: 'restaurant', name: 'postres'},
     ]},
-    {url: '', icon: 'restaurant', name: 'mi pedido'},
+    {url: 'order', icon: 'restaurant', name: 'mi pedido'},
     {url: 'signout', icon: 'directions_run', name: 'Desconectarse'},
 ];

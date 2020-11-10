@@ -3,7 +3,6 @@ import { Product } from './../../product/models/product.model';
 export class BaseMenu {
     name: string;
     description: string;
-    notes?: string;
     image: string; /** The image URL */
     printed?: boolean;
     hasSideDishes: boolean;

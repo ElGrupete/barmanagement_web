@@ -14,6 +14,7 @@ import { DessertComponent } from './menu/components/dessert/dessert.component';
 import { ChefSuggestionComponent } from './menu/components/chef-suggestion/chef-suggestion.component';
 import { StarterMealComponent } from './menu/components/starter-meal/starter-meal.component';
 import { MainCourseComponent } from './menu/components/main-course/main-course.component';
+import { MenuOrderComponent } from './menu/components/menu-order/menu-order.component';
 
 
 
@@ -29,7 +30,8 @@ import { MainCourseComponent } from './menu/components/main-course/main-course.c
     DessertComponent,
     ChefSuggestionComponent,
     StarterMealComponent,
-    MainCourseComponent
+    MainCourseComponent,
+    MenuOrderComponent
   ],
   imports: [
     CommonModule,

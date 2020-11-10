@@ -2,16 +2,63 @@
     <mat-card class="card--width-max t-center">
         <mat-card-content>
             <div class="flex-container">
+                <mat-card-subtitle class="third-width">
+                    <b>Menú</b> 
+                </mat-card-subtitle>
+                <mat-card-subtitle class="third-width">
+                    <b>Cantidad</b> 
+                </mat-card-subtitle>
+                <mat-card-subtitle class="third-width">
+                    <b>Precio</b>
+                </mat-card-subtitle>
+            </div>  
+        </mat-card-content>
+    </mat-card>
+</div>
+<!-- <div class="flex-container mt-1">
+    <mat-card class="card--width-max t-center" *ngIf="order?.menu" >
+        <mat-card-content *ngFor="let menu of order?.menu" >
+            <div class="flex-container">
                 <div class="third-width">
-                    Algo
+                    {{ menu.name }}
                 </div>
                 <div class="third-width">
-                    Algo
+                    
                 </div>
                 <div class="third-width">
-                    Algo
+                    {{ menu.price |currency}}
                 </div>
             </div>  
         </mat-card-content>
+    </mat-card>
+</div> -->
+<!-- <div class="ptb-1 flex-container" style="align-items: center;">
+    <mat-card class="card--width-max t-center" *ngIf="order?.menu?.length == 0 || order == null">
+        <mat-card-subtitle class="p-1"><b>Subtotal</b></mat-card-subtitle>
+    </mat-card>
+</div> -->
+<div class="ptb-1 flex-container" style="align-items: center;">
+    <mat-card class="card--width-max t-center">
+        <mat-card-subtitle *ngIf="order?.menu?.length == 0 || order == null" class="p-1"><b>Sin resultados</b></mat-card-subtitle>
+        <mat-card-content *ngFor="let menu of order?.menu" >
+            <div class="flex-container">
+                <div class="third-width">
+                    {{ menu.name }}
+                </div>
+                <div class="third-width">
+                    
+                </div>
+                <div class="third-width">
+                    {{ menu.price |currency}}
+                </div>
+            </div>  
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions >
+            <div class="flex-container p-2" style="display: flex; justify-content: flex-end;">
+                <button mat-stroked-button color="accent" routerLink="../management/menus/menu/list">Agregar comida <mat-icon>add</mat-icon></button>
+                <button mat-stroked-button color="primary">Enviar pedido <mat-icon>send</mat-icon></button>
+            </div>
+        </mat-card-actions>
     </mat-card>
 </div>

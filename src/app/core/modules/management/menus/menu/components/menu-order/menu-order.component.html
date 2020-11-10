@@ -1,0 +1,48 @@
+<app-banner [item]="item" [products]="products" [buttonNav]="'management/menus/menu/list'"></app-banner>
+<div class="flex-container mt-1">
+    <mat-card class="card--width-max t-center">
+        <mat-card-content>
+            <div class="flex-container">
+                  <form [formGroup]="form" class="form-container">
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Cantidad</mat-label>
+                        <input 
+                            type="number"
+                            matInput
+                            formControlName="quantity"
+                        >
+                        <!-- <mat-error *ngIf="name.hasError('required')">Nombre requerido</mat-error> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-container-width">
+                        <mat-label>Notas al pedido</mat-label>
+                        <textarea matInput formControlName="notes"></textarea>
+                    </mat-form-field>
+                </form>
+            </div>
+            <mat-card-actions>
+                <button 
+                    *ngIf="order != null || order != undefined"
+                    mat-stroked-button 
+                    color="primary" 
+                    [disabled]="!form.valid" 
+                    (click)="updateOrder()">
+                    Agregar a mi pedido
+                    <mat-icon>
+                        add
+                    </mat-icon>
+                </button>
+                <button 
+                    *ngIf="order == null || order == undefined" 
+                    mat-stroked-button 
+                    color="primary" 
+                    [disabled]="!form.valid" 
+                    (click)="createOrderAndAddMenu()">
+                    Crear y agregar a mi pedido
+                    <mat-icon>
+                        add
+                    </mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+</div>

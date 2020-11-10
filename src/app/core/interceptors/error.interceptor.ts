@@ -32,6 +32,12 @@ export class ErrorInterceptor implements HttpInterceptor {
                                 } else {
                                     this.alertService.openOnError(AlertMessages.error.message)
                                 }
+                            } else if (error.status === 400) {
+                                if (error.error.Message != null || error.error.Message != undefined) {
+                                    this.alertService.openOnError(error.error.Message)
+                                } else {
+                                    this.alertService.openOnError(AlertMessages.error.message)
+                                }
                             }
                             else if (error.status === 0) {
                                 this.alertService

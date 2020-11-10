@@ -1,14 +1,18 @@
 <div class="flex-container wrap around">
-    <mat-card class="card--width-max">
+    <mat-card class="flex-container card--width-max">
         <mat-card-title class="t-center">{{ title |uppercase }}</mat-card-title>
     </mat-card>
+</div>
+<div class="flex-container wrap around">
     <mat-card *ngFor="let item of items" class="card-container t-center m-1" style="width: 270px;">
             <mat-card-content>
-                <img mat-card-image [src]="item.url" style="width: auto; max-height: 250px;">
-                <div *ngIf="item.url == null" class="flex-container column" style="width: auto; height: 250px;">
-                    <p>Sin imagen</p>
-                    <mat-icon>visibility_off</mat-icon>
-                </div>
+                <a [href]="'management/menus/menu/order/' + item.id" style="text-decoration: none; color: black;">
+                    <img mat-card-image [src]="item.url" style="width: auto; max-height: 250px;">
+                    <div *ngIf="item.url == null" class="flex-container column" style="width: auto; height: 250px;">
+                        <p>Sin imagen</p>
+                        <mat-icon>visibility_off</mat-icon>
+                    </div>
+                </a>
                 <mat-divider></mat-divider>
                 <div class="pt-1 flex-container">
                     <div mat-card-subtitle class="m-none" *ngIf="item.price"><b>{{item.name |uppercase}} - {{ item.price |currency }}</b></div>

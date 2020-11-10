@@ -38,6 +38,45 @@
                         </mat-select>
                         <mat-error *ngIf="role.hasError('required')">Campo requerido</mat-error>
                     </mat-form-field>
+                    <!-- Here this appears if the selected role is table -->
+                    <ng-container *ngIf="isTableRole" >
+                        <mat-form-field appearance="fill" class="form-container-width">
+                            <mat-label>Número de mesa</mat-label>
+                            <input 
+                            matInput
+                            [readonly]="true"
+                            formControlName="number"
+                            >
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="form-container-width">
+                            <mat-label>Capacidad de la mesa</mat-label>
+                            <input 
+                            matInput
+                            formControlName="capacity"
+                            >
+                            <mat-error *ngIf="capacity.hasError('required')">Campo requerido</mat-error>
+                            <mat-error *ngIf="capacity.hasError('pattern')">Sólo números</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="form-container-width">
+                            <mat-label>Sector</mat-label>
+                            <mat-select formControlName="sector">
+                                <mat-option *ngFor="let sector of sectors" [value]="sector._id">
+                                    {{sector.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="sector.hasError('required')">Campo requerido</mat-error>
+                        </mat-form-field>
+                        <div class="p-1">
+                            <mat-slide-toggle formControlName="available">Disponible</mat-slide-toggle>
+                        </div>
+                        <div class="p-1">
+                            <mat-slide-toggle formControlName="booked">Reservada</mat-slide-toggle>
+                        </div>
+                    </ng-container>
+
+                    <ng-container *ngIf="isWaiterRole">
+                        
+                    </ng-container>
                 </form>
             <!-- Button Container -->
             </div>
