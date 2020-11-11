@@ -2,63 +2,49 @@
     <mat-card class="card--width-max t-center">
         <mat-card-content>
             <div class="flex-container">
+                <mat-card-title class="third-width">
+                    <b>MI PEDIDO</b> 
+                </mat-card-title>
+            </div>  
+        </mat-card-content>
+    </mat-card>
+</div>
+<div class="ptb-1 flex-container" style="align-items: center;">
+    <mat-card class="card--width-max t-center">
+        <mat-card-subtitle *ngIf="order?.menu?.length == 0 || order == null || order == undefined" class="p-1"><b>Sin resultados</b></mat-card-subtitle>
+        <mat-card-subtitle *ngIf="order?.status?.name != 'Pendiente'" class="p-1"><b>Pedido en proceso</b></mat-card-subtitle>
+        <ng-container *ngIf="order?.status?.name == 'Pendiente'">
+            <div class="flex-container">
                 <mat-card-subtitle class="third-width">
                     <b>Menú</b> 
                 </mat-card-subtitle>
                 <mat-card-subtitle class="third-width">
-                    <b>Cantidad</b> 
+                    <!-- <b>Cantidad</b>  -->
                 </mat-card-subtitle>
                 <mat-card-subtitle class="third-width">
                     <b>Precio</b>
                 </mat-card-subtitle>
             </div>  
-        </mat-card-content>
-    </mat-card>
-</div>
-<!-- <div class="flex-container mt-1">
-    <mat-card class="card--width-max t-center" *ngIf="order?.menu" >
-        <mat-card-content *ngFor="let menu of order?.menu" >
-            <div class="flex-container">
-                <div class="third-width">
-                    {{ menu.name }}
+            <mat-card-content *ngFor="let menu of order?.menu" >
+                <div class="flex-container">
+                    <div class="third-width">
+                        {{ menu.name }}
+                    </div>
+                    <div class="third-width">
+                        
+                    </div>
+                    <div class="third-width">
+                        {{ menu.price.$numberDecimal |currency}}
+                    </div>
+                </div>  
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-card-actions >
+                <div class="flex-container p-2" style="display: flex; justify-content: flex-end;">
+                    <button mat-stroked-button color="accent" routerLink="../management/menus/menu/list">Agregar comida <mat-icon>add</mat-icon></button>
+                    <button mat-stroked-button color="primary" [disabled]="order?.menu?.length == 0 || order?.menu == null" (click)="sendOrder()">Enviar pedido <mat-icon>send</mat-icon></button>
                 </div>
-                <div class="third-width">
-                    
-                </div>
-                <div class="third-width">
-                    {{ menu.price |currency}}
-                </div>
-            </div>  
-        </mat-card-content>
-    </mat-card>
-</div> -->
-<!-- <div class="ptb-1 flex-container" style="align-items: center;">
-    <mat-card class="card--width-max t-center" *ngIf="order?.menu?.length == 0 || order == null">
-        <mat-card-subtitle class="p-1"><b>Subtotal</b></mat-card-subtitle>
-    </mat-card>
-</div> -->
-<div class="ptb-1 flex-container" style="align-items: center;">
-    <mat-card class="card--width-max t-center">
-        <mat-card-subtitle *ngIf="order?.menu?.length == 0 || order == null" class="p-1"><b>Sin resultados</b></mat-card-subtitle>
-        <mat-card-content *ngFor="let menu of order?.menu" >
-            <div class="flex-container">
-                <div class="third-width">
-                    {{ menu.name }}
-                </div>
-                <div class="third-width">
-                    
-                </div>
-                <div class="third-width">
-                    {{ menu.price |currency}}
-                </div>
-            </div>  
-        </mat-card-content>
-        <mat-divider></mat-divider>
-        <mat-card-actions >
-            <div class="flex-container p-2" style="display: flex; justify-content: flex-end;">
-                <button mat-stroked-button color="accent" routerLink="../management/menus/menu/list">Agregar comida <mat-icon>add</mat-icon></button>
-                <button mat-stroked-button color="primary">Enviar pedido <mat-icon>send</mat-icon></button>
-            </div>
-        </mat-card-actions>
+            </mat-card-actions>
+        </ng-container>
     </mat-card>
 </div>

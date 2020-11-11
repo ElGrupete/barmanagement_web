@@ -19,7 +19,8 @@
           "options": {
             "allowedCommonJsDependencies": [
               "@firebase/app",
-              "firebase/app"
+              "firebase/app",
+              "@firebase/component"
             ],
             "outputPath": "dist/bar-management-web",
             "index": "src/index.html",

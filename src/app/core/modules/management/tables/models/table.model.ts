@@ -14,6 +14,7 @@ export class Table extends BaseTable {
 }
 
 export class ResponseTable extends BaseTable {
+    _id: string;
     sector: ResponseSector; /** Sector type */
     user: User;
     info?: string;

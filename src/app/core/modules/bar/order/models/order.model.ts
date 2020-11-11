@@ -15,6 +15,7 @@ export class Order extends BaseOrder {
 }
 
 export class ResponseOrder extends BaseOrder {
+    _id: string;
     menu: ResponseMenu[];
     combo: any; /** Here it goes the actual Class */
     table: any; /** Here it goes the actual Class */

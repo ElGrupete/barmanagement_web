@@ -11,6 +11,7 @@ export const API_ROUTES = {
         category: 'category',
         product: 'product',
         menu: 'menu',
-        order: 'order'
+        order: 'order',
+        orderByTable: 'order/tableId'
     }
 }

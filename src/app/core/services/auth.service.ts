@@ -1,3 +1,4 @@
+import { User } from 'src/app/core/models/user.model';
 import { Role } from './../models/role.model';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -70,6 +71,11 @@ export class AuthService {
   getRole(): Role {
     let decodedToken = this.tokenService.getDecodedToken(this.tokenService.getAuthToken());
     return (decodedToken.user.role) as Role;
+  }
+
+  getUser(): User {
+    let decodedToken = this.tokenService.getDecodedToken(this.tokenService.getAuthToken());
+    return (decodedToken.user) as User;
   }
 
 }

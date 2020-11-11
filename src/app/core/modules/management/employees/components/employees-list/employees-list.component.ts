@@ -30,6 +30,7 @@ export class EmployeesListComponent implements OnInit {
           map(allEmployees => allEmployees.Result.users)
         )
         .subscribe((employees: ResponseEmployees[]) => {
+          console.log(employees);
           this.employees = employees;
           this.employees.forEach(employee => {
             this.items

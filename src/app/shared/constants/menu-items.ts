@@ -4,6 +4,7 @@ export const MenuItems: IMenuItem[] = [
     {url: 'home', icon: 'home', name: 'Inicio'},
     {url: 'management', icon: 'dashboard', name: 'Administración'},
     {name: 'Nuestro menú', submenus: [
+        {url: 'management/menus/menu/list', icon: 'restaurant', name: 'todos los platos'},
         {url: 'management/menus/menu/chef-suggestion', icon: 'restaurant', name: 'sugerencias del chef'},
         {url: 'management/menus/menu/', icon: 'restaurant', name: 'entradas'},
         {url: 'management/menus/menu/', icon: 'restaurant', name: 'sandwiches'},
