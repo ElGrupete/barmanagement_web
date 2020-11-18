@@ -9,44 +9,54 @@ import { NewCategoryComponent } from './category/components/new-category/new-cat
 import { MenusComponent } from './menus.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminRoleGuard, ClientRoleGuard } from 'src/app/core/guards/role.guard';
 
 
 const routes: Routes = [
   {
-    path: '',
-    component: MenusComponent
+    path: 'menu',
+    component: MenusComponent,
+    canActivate: [AdminRoleGuard]
   },
   {
     path: 'category/list',
-    component: CategoryListComponent
+    component: CategoryListComponent,
+    canActivate: [AdminRoleGuard]
   },
   {
     path: 'category/new',
-    component: NewCategoryComponent
+    component: NewCategoryComponent,
+    canActivate: [AdminRoleGuard]
   },
   {
     path: 'menu/list',
-    component: MenuListComponent
+    component: MenuListComponent,
+    canActivate: [AdminRoleGuard]
   },
   {
     path: 'menu/new',
-    component: NewMenuComponent
+    component: NewMenuComponent,
+    canActivate: [AdminRoleGuard]
   },
   {
     path: 'menu/detail/:id',
-    component: MenuDetailComponent
+    component: MenuDetailComponent,
+    canActivate: [AdminRoleGuard]
   },
   {
     path: 'menu/order/:id',
-    component: MenuOrderComponent
+    component: MenuOrderComponent,
+    canActivate: [ClientRoleGuard]
   },
   {
     path: 'menu/chef-suggestion',
-    component: ChefSuggestionComponent
+    component: ChefSuggestionComponent,
+    canActivate: [ClientRoleGuard]
   },
   {
     path: 'menu/dessert',
-    component: DessertComponent
+    component: DessertComponent,
+    canActivate: [ClientRoleGuard]
   },
   {
     path: '**',

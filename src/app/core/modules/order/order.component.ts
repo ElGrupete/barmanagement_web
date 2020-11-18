@@ -1,11 +1,11 @@
 import { Router } from '@angular/router';
-import { AuthService } from './../../../services/auth.service';
-import { ResponseTable } from './../../management/tables/models/table.model';
+import { AuthService } from './../../services/auth.service';
+import { ResponseTable } from './../management/tables/models/table.model';
 import { User } from 'src/app/core/models/user.model';
 import { API_ROUTES } from 'src/app/shared/constants/api-routes';
-import { EmployeesService } from './../../management/employees/services/employees.service';
-import { TablesService } from './../../management/tables/services/tables.service';
-import { AlertService } from './../../../../shared/services/alert/alert.service';
+import { EmployeesService } from './../management/employees/services/employees.service';
+import { TablesService } from './../management/tables/services/tables.service';
+import { AlertService } from './../../../shared/services/alert/alert.service';
 import { map } from 'rxjs/operators';
 import { OrderService } from './services/order.service';
 import { Order, ResponseOrder } from './models/order.model';

@@ -4,20 +4,24 @@ import { GoToHomeGuard } from './../../../guards/go-to-home.guard';
 import { EmployeesComponent } from './employees.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminRoleGuard } from 'src/app/core/guards/role.guard';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: EmployeesComponent
+    component: EmployeesComponent,
+    canActivate: [AdminRoleGuard]
   },
   {
     path: 'list',
-    component: EmployeesListComponent
+    component: EmployeesListComponent,
+    canActivate: [AdminRoleGuard]
   },
   {
     path: 'new',
-    component: NewEmployeeComponent
+    component: NewEmployeeComponent,
+    canActivate: [AdminRoleGuard]
   },
   {
     path: '**',

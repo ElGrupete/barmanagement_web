@@ -1,4 +1,5 @@
-import { ResponseMenu } from './../../../management/menus/menu/models/menu.model';
+import { ResponseMenu } from '../../../../core/modules/management/menus/menu/models/menu.model';
+
 export class BaseOrder {
     cutlery?: number;
     totalCost?: number;

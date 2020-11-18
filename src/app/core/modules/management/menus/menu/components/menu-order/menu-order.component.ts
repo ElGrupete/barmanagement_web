@@ -1,8 +1,8 @@
 import { TablesService } from './../../../../tables/services/tables.service';
 import { AlertService } from './../../../../../../../shared/services/alert/alert.service';
 import { AuthService } from './../../../../../../services/auth.service';
-import { Order, ResponseOrder } from './../../../../../bar/order/models/order.model';
-import { OrderService } from './../../../../../bar/order/services/order.service';
+import { Order, ResponseOrder } from './../../../../../order/models/order.model';
+import { OrderService } from './../../../../../order/services/order.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';

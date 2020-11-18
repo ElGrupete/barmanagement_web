@@ -1,3 +1,4 @@
+import { AdminRoleGuard } from './../../guards/role.guard';
 import { AuthGuard } from './../../guards/auth.guard';
 import { ManagementComponent } from './management.component';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     component: ManagementComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard, AdminRoleGuard]
   },
   {
     path: 'tables',

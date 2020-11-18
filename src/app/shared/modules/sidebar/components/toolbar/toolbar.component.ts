@@ -1,3 +1,4 @@
+import { AuthService } from './../../../../../core/services/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
@@ -12,9 +13,20 @@ export class ToolbarComponent implements OnInit {
   @Input() opened: boolean = false;
   @Input() closed: boolean = true;
 
-  constructor() { }
+  canSeeButtons: boolean = false;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.setButtonVisibility();
+  }
+
+  private setButtonVisibility(): void {
+    if (this.authService.isTableRole()) {
+      this.canSeeButtons = true;
+    } else {
+      this.canSeeButtons = false;
+    }
   }
 
 }

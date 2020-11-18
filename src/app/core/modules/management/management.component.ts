@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { IOptions } from 'src/app/shared/models/options.model';
 
@@ -9,18 +10,28 @@ import { IOptions } from 'src/app/shared/models/options.model';
 export class ManagementComponent implements OnInit {
 
   title: string = 'bienvenid@ admin';
-  options: IOptions[] = [
-    {name: 'gestionar mesas', url: 'tables'}, 
-    {name: 'gestionar empleados', url: 'employees'}, 
-    {name: 'gestionar menus', url: 'menus'},
-    {name: 'reservas', url: 'bookings'},
-    {name: 'turnos', url: 'shifts'},
-    {name: 'caja', url: 'cash-register'},
-  ]
+  options: IOptions[] = [];
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.setManagementOptions();
+  }
+
+  private setManagementOptions(): void {
+    if (this.authService.isAdminRole) {
+      this.options.push(
+        {name: 'gestionar mesas', url: 'tables'}, 
+        {name: 'gestionar empleados', url: 'employees'}, 
+        {name: 'gestionar menus', url: 'menus'}
+      )
+    } else if (this.authService.isCashRegisterRole || this.authService.isWaiterRole) {
+      this.options.push(
+        {name: 'reservas', url: 'bookings'},
+        {name: 'turnos', url: 'shifts'},
+        {name: 'caja', url: 'cash-register'}
+      )
+    }
   }
 
 }

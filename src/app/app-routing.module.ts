@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'order',
-    loadChildren: () => import('./core/modules/bar/order/order.module').then(m => m.OrderModule)
+    loadChildren: () => import('./core/modules/order/order.module').then(m => m.OrderModule)
   },
   {
     path: '',
